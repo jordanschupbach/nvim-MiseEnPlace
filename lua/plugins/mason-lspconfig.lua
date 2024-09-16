@@ -31,7 +31,7 @@ return {
         filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' }, --  'proto'
         single_file_support = true,
       },
-      jdtls = {}, -- jdtls_config
+      jdtls = {},
       tsserver = {},
       phpactor = {},
       pyright = {},
@@ -39,22 +39,9 @@ return {
         cmd = { 'R', '--slave', '-e', "'languageserver::run()'" },
         filetypes = { 'R', 'r', 'rmd', 'Rmd' },
       },
-      hls = {
-        filetypes = { 'haskell', 'lhaskell', 'cabal', 'hs' },
-        cmd = { '/home/jordan/.local/share/nvim/mason/bin/haskell-language-server-wrapper', '--lsp' },
-        single_file_support = true,
-        root_dir = '/home/jordan/scratchpads/haskell-scratchpad/',
-        settings = {
-          haskell = {
-            cabalFormattingProvider = 'cabalfmt',
-            formattingProvider = 'ormolu',
-          },
-        },
-      },
       -- neocmakelsp = require 'lsp.neocmakelsp',
       -- lua_ls = require 'lsp.lua-ls',
     }
-    -- require('neodev').setup()
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities()
     local mason_lspconfig = require 'mason-lspconfig'
