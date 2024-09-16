@@ -72,9 +72,22 @@ end
 --- Opens init.lua for nvim config
 -- TODO: dev full open config function
 mep.open_init_file = function()
-    vim.cmd('e ~/.config/nvim-misenplace/lua/playground.lua')
+    vim.cmd('e ~/.config/nvim-misenplace/README.md')
     local project_dir = require'mep'.find_project_dir()
     vim.cmd('cd ' .. project_dir)
+    vim.cmd('split')
+    vim.cmd('terminal')
+    vim.cmd('lua require("smart-splits").resize_down()')
+    vim.cmd('lua require("smart-splits").resize_down()')
+    vim.cmd('wincmd k')
+    vim.cmd('Neotree toggle')
+    vim.cmd('lua require("smart-splits").resize_left()')
+    vim.cmd('lua require("smart-splits").resize_left()')
+    vim.cmd('lua require("smart-splits").resize_left()')
+    vim.cmd('lua require("smart-splits").resize_left()')
+    vim.cmd('lua require("smart-splits").resize_left()')
+    vim.cmd('lua require("smart-splits").resize_left()')
+    vim.cmd('wincmd l')
 end
 -- }}} Command mep
 
