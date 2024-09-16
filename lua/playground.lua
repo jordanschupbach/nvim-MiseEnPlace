@@ -2,15 +2,15 @@
 
 print 'hello world'
 
-mep = require 'mep'
+Mep = require 'mep'
 
 --- Just a simple hello world function
 -- prints hello world
-mep.print_hello = function()
+Mep.print_hello = function()
   print("Hello, world!")
 end
 
-mep.print_hello()
+Mep.print_hello()
 
 vim.cmd('Neotree toggle')
 vim.cmd('split')
