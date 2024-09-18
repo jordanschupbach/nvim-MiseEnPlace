@@ -4,6 +4,12 @@ print 'hello world'
 
 Mep = require 'mep'
 
+
+Mep.dark_mode()
+
+Mep.light_mode()
+
+
 --- Just a simple hello world function
 -- prints hello world
 Mep.print_hello = function()

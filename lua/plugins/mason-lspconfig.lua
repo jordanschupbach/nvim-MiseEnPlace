@@ -20,6 +20,7 @@ return {
         cmd = { 'R', '--slave', '-e', "'languageserver::run()'" },
         filetypes = { 'R', 'r', 'rmd', 'Rmd' },
       },
+      clangd = {},
       -- lua_ls = require 'lsp.lua-ls',
       -- clangd = require 'lsp.clangd',
     }

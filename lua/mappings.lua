@@ -84,3 +84,22 @@ mymap('t', '<Space>ps', '<CMD>sp<CR> <CMD>wincmd j<CR> <CMD>terminal<CR> a')
 mymap('n', '<Space>yy', '<CMD>Telescope ultisnips<CR>')
 
 -- }}} Snippets bindings
+
+-- {{{ Tab bindings
+
+mymap('n', '<C-t>', '<CMD>tabnew<CR>')
+-- NOTE: these dont work?
+-- mymap('n', '<C-Tab>', '<CMD>tabnext<CR>')
+-- mymap('n', '<C-S-Tab>', '<CMD>tabprevious<CR>')
+mymap('n', '<A-1>', ':tabn1<CR>')
+mymap('n', '<A-2>', ':tabn2<CR>')
+mymap('n', '<A-3>', ':tabn3<CR>')
+mymap('n', '<A-4>', ':tabn4<CR>')
+mymap('n', '<A-5>', ':tabn5<CR>')
+mymap('n', '<A-6>', ':tabn6<CR>')
+mymap('n', '<A-7>', ':tabn7<CR>')
+mymap('n', '<A-8>', ':tabn8<CR>')
+mymap('n', '<A-9>', ':tabn9<CR>')
+
+-- }}} Tab bindings
+

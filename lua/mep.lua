@@ -3,6 +3,18 @@
 
 local mep = {}
 
+-- {{{ UI utils
+
+mep.dark_mode = function()
+  vim.cmd("colorscheme habamax")
+end
+
+mep.light_mode = function()
+  vim.cmd("colorscheme zellner")
+end
+
+-- }}} UI utils
+
 -- {{{ Mapping utils
 mep.mymap = function(mode, key, value)
   vim.keymap.set(mode, key, value, { silent = true, remap = true })
@@ -70,7 +82,6 @@ end
 -- {{{ Command mep
 
 --- Opens init.lua for nvim config
--- TODO: dev full open config function
 mep.open_init_file = function()
     vim.cmd('e ~/.config/nvim-misenplace/README.md')
     local project_dir = require'mep'.find_project_dir()
@@ -117,7 +128,7 @@ end
 -- @see register_sendto_buffer, send_lines_to_buffer
 mep.send_line_to_buffer = function()
   local current_line = vim.api.nvim_get_current_line()
-  local original_bufnr = vim.fn.bufnr '%'
+  -- local original_bufnr = vim.fn.bufnr '%'
   local target_bufnr = SendTo_Bufnr
   local win_id = vim.fn.bufwinid(target_bufnr)
   if win_id ~= -1 then
@@ -170,7 +181,7 @@ end
 -- @see register_sendto_buffer, send_line_to_buffer
 mep.send_lines_to_buffer = function()
   local current_lines = require('mep').get_visual_selection_lines()
-  local original_bufnr = vim.fn.bufnr '%'
+  -- local original_bufnr = vim.fn.bufnr '%'
   local target_bufnr = SendTo_Bufnr
   local win_id = vim.fn.bufwinid(target_bufnr)
   if win_id ~= -1 then
@@ -189,5 +200,6 @@ mep.send_lines_to_buffer = function()
 end
 
 -- }}} repl mep
+
 
 return mep
