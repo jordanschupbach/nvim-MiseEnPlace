@@ -1,26 +1,8 @@
--- Just a throwaway lua playground
+print("hello world")
 
-print 'hello world'
+pm = require('lua.playmodule')
+assert(pm.test_function() == "This is a test")
+pm.another_test_function()
+pm.the_final_function()
 
-Mep = require 'mep'
-
-
-Mep.dark_mode()
-
-Mep.light_mode()
-
-
---- Just a simple hello world function
--- prints hello world
-Mep.print_hello = function()
-  print("Hello, world!")
-end
-
-Mep.print_hello()
-
-vim.cmd('Neotree toggle')
-vim.cmd('split')
-vim.cmd('terminal')
-vim.cmd('vsplit')
-vim.cmd('wincmd l')
 

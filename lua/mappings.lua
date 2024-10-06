@@ -4,6 +4,13 @@ local function mymap(mode, key, value)
   vim.keymap.set(mode, key, value, { silent = true, remap = true })
 end
 
+mymap('n', '<A-x>', '<CMD>Telescope commands<CR>')
+mymap('n', '<Space>oc', '<CMD>OpenConfig<CR>')
+mymap('n', '<Space><Space>', '<CMD>Telescope make<CR>')
+mymap('n', '<Space>ll', '<CMD>AerialToggle<CR>')
+mymap('n', '<Space>pp', '<CMD>Telescope project<CR>')
+mymap('n', '<Space>po', '<CMD>Telescope project<CR>')
+
 -- {{{ Buffer bindings
 
 mymap('n', '<Space>bb', '<CMD>Telescope buffers<CR>')

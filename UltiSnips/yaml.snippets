@@ -1,0 +1,27 @@
+
+# ==============
+# Snippets
+# ==============
+priority -50
+
+snippet condaenv "Basic conda environment" b
+name: mylib
+channels:
+  - default
+  - conda-forge
+  - anaconda
+dependencies:
+  - python=3.12
+  - make=4.3
+  - poetry=1.5.1
+  - pip
+  - pip:
+    - black
+endsnippet
+
+
+
+
+
+
+

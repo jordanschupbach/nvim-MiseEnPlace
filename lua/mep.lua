@@ -3,15 +3,33 @@
 
 local mep = {}
 
+
+
 -- {{{ UI utils
 
-mep.dark_mode = function()
-  vim.cmd("colorscheme habamax")
-end
+-- mep.dark_mode = function()
+--   vim.cmd("colorscheme habamax")
+-- end
+-- 
+-- mep.light_mode = function()
+--   vim.cmd("colorscheme zellner")
+-- end
+
 
 mep.light_mode = function()
-  vim.cmd("colorscheme zellner")
+  local highlights = require 'themes.light'
+  for hl, spec in pairs(highlights) do
+    vim.api.nvim_set_hl(0, hl, spec)
+  end
 end
+
+mep.dark_mode = function ()
+  local highlights = require 'themes.dark'
+  for hl, spec in pairs(highlights) do
+    vim.api.nvim_set_hl(0, hl, spec)
+  end
+end
+
 
 -- }}} UI utils
 
@@ -200,6 +218,14 @@ mep.send_lines_to_buffer = function()
 end
 
 -- }}} repl mep
+
+-- {{{ Misc
+
+mep.print_hello = function()
+  print("hello world")
+end
+
+-- }}} Misc
 
 
 return mep

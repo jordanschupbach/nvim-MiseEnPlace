@@ -1,4 +1,4 @@
-# Nvim-MiseEnPlace (minimal)
+# Nvim-MiseEnPlace
 
 My personal neovim config.
 

@@ -1,1 +1,5 @@
 lazy-lock.json
+language-playground/c-playground/hello_world
+language-playground/cpp-playground/hello_world
+**/*.o
+**/*.so

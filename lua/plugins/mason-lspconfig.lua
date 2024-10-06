@@ -9,8 +9,6 @@ return {
   },
   config = function()
     local ensured_servers = {
-      -- bashls = {},
-      -- cmake = {},
       jdtls = {
         filetyptes = { 'java' },
       },
@@ -21,15 +19,11 @@ return {
         filetypes = { 'R', 'r', 'rmd', 'Rmd' },
       },
       clangd = {},
-      -- lua_ls = require 'lsp.lua-ls',
-      -- clangd = require 'lsp.clangd',
     }
     local servers = {
-      -- bashls = {},
-      -- cmake = {},
       clangd = {
         cmd = 'clangd -std=c++20 -stdlib=libstdc++ -I/usr/include/gismo/',
-        filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' }, --  'proto'
+        filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
         single_file_support = true,
       },
       jdtls = {},
@@ -40,8 +34,6 @@ return {
         cmd = { 'R', '--slave', '-e', "'languageserver::run()'" },
         filetypes = { 'R', 'r', 'rmd', 'Rmd' },
       },
-      -- neocmakelsp = require 'lsp.neocmakelsp',
-      -- lua_ls = require 'lsp.lua-ls',
     }
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities()

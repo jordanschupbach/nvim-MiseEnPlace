@@ -1,0 +1,503 @@
+
+priority -50
+
+extends c
+
+# We want to overwrite everything in parent ft.
+priority -49
+###########################################################################
+#			    Global functions 						  #
+###########################################################################
+
+global !p
+
+def write_docstring_args(arglist, snip):
+	args = str(arglist).split(',')
+
+	if len(args) > 1:
+		c = 0
+		for arg in args:
+			if c == 0:
+				snip.rv += arg
+				c = 1
+			else:
+				snip += '*       : %s' % arg.strip()
+	else:
+		snip.rv = args[0]
+
+
+endglobal
+
+###########################################################################
+#                            TextMate Snippets                            #
+###########################################################################
+
+snippet ponce "#pragma once include guard"
+#pragma once
+endsnippet
+
+
+snippet includealgorithm
+#include <algorithm>
+endsnippet
+
+
+snippet mitlicense
+// Copyright (c) <2024> <Jordan Schupbach>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+endsnippet
+
+
+
+
+snippet unlicense
+// This is free and unencumbered software released into the public domain.
+//
+// Anyone is free to copy, modify, publish, use, compile, sell, or
+// distribute this software, either in source code form or as a compiled
+// binary, for any purpose, commercial or non-commercial, and by any
+// means.
+//
+// In jurisdictions that recognize copyright laws, the author or authors
+// of this software dedicate any and all copyright interest in the
+// software to the public domain. We make this dedication for the benefit
+// of the public at large and to the detriment of our heirs and
+// successors. We intend this dedication to be an overt act of
+// relinquishment in perpetuity of all present and future rights to this
+// software under copyright law.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+// OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+// ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+//
+// For more information, please refer to <http://unlicense.org/>
+endsnippet
+
+
+
+
+snippet hellozfull
+// Closed-source Code License (CSCL)
+//
+// Copyright (C) Jordan Schupbach - All Rights Reserved.
+//
+// UNAUTHORIZED COPYING OF THIS SOFTWARE OR ITS SOURCE CODE,
+// VIA ANY MEDIUM IS STRICTLY PROHIBITED. THE CONTENTS INSIDE
+// THIS PROJECT ARE PROPRIETARY AND CONFIDENTIAL.
+//
+// The above copyright notice and this permission notice shall
+// be included in all copies or substantial portions of the Software.
+//
+// Written by Jordan Schupbach <jordans1882@gmail.com>, September 2023.
+
+#include <iostream>
+
+int main(int argc, char *argv[]) {
+  std::cout << "Hello Worldz" << std::endl;
+  return 0;
+}
+
+
+
+endsnippet
+
+
+snippet newtest
+#include <catch2/catch_test_macros.hpp>
+#include <datamunge/Foo.hpp>
+#include <iostream>
+#include <numeric>
+#include <string>
+
+#include <datamunge/dstruct/dframe.hpp>
+
+namespace datamunge {
+
+TEST_CASE("Construct Node", "[Node]") {
+  SECTION("Default") {
+    REQUIRE("1" == "2");
+  }
+}
+
+} // namespace datamunge
+endsnippet
+
+
+snippet includearray
+#include <array>
+endsnippet
+
+
+snippet includebitset
+#include <bitset>
+endsnippet
+
+
+snippet includecomplex
+#include <complex>
+endsnippet
+
+snippet includedeque
+#include <deque>
+endsnippet
+
+snippet includeexception
+#include <exception>
+endsnippet
+
+snippet includefstream
+#include <fstream>
+endsnippet
+
+snippet includefunctional
+#include <functional>
+endsnippet
+
+snippet includeiomanip
+#include <iomanip>
+endsnippet
+
+
+snippet includeios
+#include <ios>
+endsnippet
+
+
+snippet includeiterator
+#include <iterator>
+endsnippet
+
+
+snippet includelist
+#include <list>
+endsnippet
+
+
+snippet includememory
+#include <memory>
+endsnippet
+
+
+snippet includenumeric
+#include <numeric>
+endsnippet
+
+snippet includequeue
+#include <queue>
+endsnippet
+
+
+snippet includeset
+#include <set>
+endsnippet
+
+
+snippet includestack
+#include <stack>
+endsnippet
+
+
+
+snippet includestdexcept
+#include <stdexcept>
+endsnippet
+
+
+snippet includeutility
+#include <utility>
+endsnippet
+
+
+snippet includecmath
+#include <cmath>
+endsnippet
+
+
+snippet includeiostream
+#include<iostream>
+endsnippet
+
+snippet includeoptional
+#include<optional>
+endsnippet
+
+snippet includestring
+#include <string>
+endsnippet
+
+
+
+snippet includemap
+#include <map>
+endsnippet
+
+snippet includestdexcept
+#include <stdexcept>
+endsnippet
+
+
+snippet closedlicense
+// Closed-source Code License (CSCL)
+//
+// Copyright (C) Jordan Schupbach - All Rights Reserved.
+//
+// UNAUTHORIZED COPYING OF THIS SOFTWARE OR ITS SOURCE CODE,
+// VIA ANY MEDIUM IS STRICTLY PROHIBITED. THE CONTENTS INSIDE
+// THIS PROJECT ARE PROPRIETARY AND CONFIDENTIAL.
+//
+// The above copyright notice and this permission notice shall
+// be included in all copies or substantial portions of the Software.
+//
+// Written by Jordan Schupbach <jordans1882@gmail.com>, September 2023.
+endsnippet
+
+
+
+snippet includememory
+#include <memory>
+endsnippet
+
+
+snippet includevector
+#include <vector>
+endsnippet
+
+snippet includerandom
+#include<random>
+endsnippet
+
+snippet copyright
+// Copyright 2023 <Jordan Schupbach>
+
+endsnippet
+
+snippet runif "runif" b
+  std::mt19937_64 mt64;
+  mt64.seed(42);
+  std::uniform_real_distribution<double> distribution(0.0, 1.0);
+  double val = distribution(mt64);
+  std::cout << "Random uniform value: " << val << std::endl;
+endsnippet
+
+snippet main
+int main(int argc, char *argv[])
+{
+	${0}
+	return 0;
+}
+endsnippet
+
+
+
+snippet iostream
+#include <iostream>
+$1
+endsnippet
+
+
+snippet hello
+  std::cout << "Hello Worldz" << std::endl;
+$1
+endsnippet
+
+
+snippet cout
+  std::cout << $1 << std::endl;
+endsnippet
+
+
+
+
+snippet throw
+  if(${1:throw_p}) {
+    throw std::invalid_argument("$2");
+  }
+endsnippet
+
+
+snippet forc "general for loop (for)"
+for (${6:auto} ${1:i} = ${2:v.begin()}; `!p import re; snip.rv = re.split("[^\w]",t[1])[-1]` ${4:!=} ${3:`!p m = re.search(r'^(?:(.*)(\.|->)begin\(\)|((?:std|boost)::)?begin\((.*)\))$', t[2]); snip.rv = (((m.group(3) if m.group(3) else "") + "end(" + m.group(4) + ")") if m.group(4) else (m.group(1) + m.group(2) + "end()")) if m else ""`}; ${5:++`!p snip.rv = t[1].split(" ")[-1]`}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet beginend "$1.begin(), $1.end() (beginend)"
+${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
+endsnippet
+
+snippet cl "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+	${1/(\w+).*/$1/} (${2:arguments});
+	virtual ~${1/(\w+).*/$1/} ();
+
+private:
+	${0:/* data */}
+};
+endsnippet
+
+snippet ns "namespace .. (namespace)"
+namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`}
+{
+	${VISUAL}$0
+}${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
+endsnippet
+
+snippet nsa "namespace alias"
+namespace ${1:alias} = ${2:namespace};
+endsnippet
+
+snippet using "using directive/using declaration/type alias"
+using ${1:namespace}`!p snip.rv = ' ' if t[1] == 'namespace' else ' = ' if t[1] != '' else ''`${2:name};
+endsnippet
+
+snippet readfile "read file (readF)"
+std::vector<char> v;
+if (FILE *fp = fopen(${1:"filename"}, "r"))
+{
+	char buf[1024];
+	while(size_t len = fread(buf, 1, sizeof(buf), fp))
+		v.insert(v.end(), buf, buf + len);
+	fclose(fp);
+}
+endsnippet
+
+snippet map "std::map (map)"
+std::map<${1:key}, ${2:value}> map$0;
+endsnippet
+
+snippet vector "std::vector (v)"
+std::vector<${1:char}> v$0;
+endsnippet
+
+snippet tp "template <typename ..> (template)"
+template <typename ${1:_InputIter}>
+endsnippet
+
+snippet cla "An entire .h generator" b
+#ifndef ${2:`!v substitute(vim_snippets#Filename('$1_H','ClassName'),'.*','\U&\E','')`}
+#define $2
+
+class ${1:`!v substitute(substitute(vim_snippets#Filename('$1','ClassName'),'^.','\u&',''), '_\(\w\)', '\u\1', 'g')`}
+{
+private:
+	$3
+
+public:
+	$1();
+	virtual ~$1();
+};
+
+#endif /* $2 */
+endsnippet
+
+
+snippet fnc "Basic c++ doxygen function template" b
+/**
+* @brief: ${4:brief}
+*
+* @param: `!p write_docstring_args(t[3],snip)`
+*
+* @return: `!p snip.rv = t[1]`
+*/
+${1:ReturnType} ${2:FunctionName}(${3:param})
+{
+	${0:FunctionBody}
+}
+endsnippet
+
+snippet boost_test "Boost test module" b
+#define BOOST_TEST_MODULE ${1:TestModuleName}
+#include <boost/test/included/unit_test.hpp>
+
+BOOST_AUTO_TEST_CASE(${2:TestCaseName})
+{
+	${0:TestDefinition}
+}
+
+endsnippet
+
+snippet boost_suite "Boost test suite module" b
+#define BOOST_TEST_MODULE ${1:TestModuleName}
+#include <boost/test/included/unit_test.hpp>
+
+BOOST_AUTO_TEST_SUITE(${2:SuiteName})
+
+BOOST_AUTO_TEST_CASE(${3:TestCaseName})
+{
+	${0:TestDefinition}
+}
+
+BOOST_AUTO_TEST_SUITE_END()
+
+endsnippet
+snippet boost_test_fixture "Boost test module with fixture" b
+#define BOOST_TEST_MODULE ${1:TestModuleName}
+#include <boost/test/included/unit_test.hpp>
+
+struct ${2:FixtureName} {
+	$2() {}
+	virtual ~$2() {}
+	/* define members here */
+};
+
+BOOST_FIXTURE_TEST_CASE(${3:SuiteName}, $2)
+{
+	${0:TestDefinition}
+}
+
+endsnippet
+
+snippet boost_suite_fixture "Boost test suite with fixture" b
+#define BOOST_TEST_MODULE ${1:TestModuleName}
+#include <boost/test/included/unit_test.hpp>
+
+struct ${2:FixtureName} {
+	$2() {}
+	virtual ~$2() {}
+	/* define members here */
+};
+
+BOOST_FIXTURE_TEST_SUITE(${3:SuiteName}, $2)
+
+BOOST_AUTO_TEST_CASE(${4:TestCaseName})
+{
+	${0:TestDefinition}
+}
+
+BOOST_AUTO_TEST_SUITE_END()
+
+endsnippet
+# vim:ft=snippets:
+
+
+snippet doc
+/**
+ * @brief A brief description.
+ *
+ * A longer form description.
+ *
+ */
+endsnippet
