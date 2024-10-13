@@ -4,6 +4,43 @@
 local mep = {}
 
 
+--- Dumps a table to a string
+--- @param o table to dump
+--- @return string representation of the table
+---
+--- Example:
+---
+--- mep.dump({"Hello", "World"})
+---
+function mep.dump(o)
+   if type(o) == 'table' then
+      local s = '{ '
+      for k,v in pairs(o) do
+         if type(k) ~= 'number' then k = '"'..k..'"' end
+         s = s .. '['..k..'] = ' .. mep.dump(v) .. ','
+      end
+      return s .. '} '
+   else
+      return tostring(o)
+   end
+end
+
+
+-- mep.dump = function(o)
+--   if type(o) == 'table' then
+--     local s = '{ '
+--     for k, v in pairs(o) do
+--       if type(k) ~= 'number' then
+--         k = '"' .. k .. '"'
+--       end
+--       s = s .. '[' .. k .. '] = ' .. mep.dump(v) .. ','
+--     end
+--     return s .. '} '
+--   else
+--     return tostring(o)
+--   end
+-- end
+
 
 -- {{{ UI utils
 
@@ -101,7 +138,7 @@ end
 
 --- Opens init.lua for nvim config
 mep.open_init_file = function()
-    vim.cmd('e ~/.config/nvim-misenplace/README.md')
+    vim.cmd('e ~/.config/nvim-MiseEnPlace/README.md')
     local project_dir = require'mep'.find_project_dir()
     vim.cmd('cd ' .. project_dir)
     vim.cmd('split')
@@ -226,6 +263,5 @@ mep.print_hello = function()
 end
 
 -- }}} Misc
-
 
 return mep

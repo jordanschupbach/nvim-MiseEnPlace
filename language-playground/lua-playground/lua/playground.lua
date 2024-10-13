@@ -1,4 +1,3 @@
-
 -- {{{ Editor basics
 
 -- 1) First, open neoshell with 'g:'
@@ -84,11 +83,5 @@ Fruit.static.sweetness_threshold = 5
 
 
 -- }}} Library Dev
-
-
-
-
-
-
 
 

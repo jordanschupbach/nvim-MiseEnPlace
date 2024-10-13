@@ -28,8 +28,6 @@ return {
   opts = {
     library = {
       -- Library paths can be absolute
-      "~/.config/awesome",
-      "/usr/share/awesome/lib",
       "~/projects/my-awesome-lib",
       -- Or relative, which means they will be resolved from the plugin dir.
       "lazy.nvim",
