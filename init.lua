@@ -12,3 +12,5 @@ require("autocommands")
 
 -- vim.cmd('DarkMode')
 
+vim.api.nvim_win_set_option(0, 'winhighlight', 'Normal:NormalNC,WinSeparator:GraySeparator')
+vim.api.nvim_set_hl(0, 'WinSeparator', { fg = 'orange', bold = false })

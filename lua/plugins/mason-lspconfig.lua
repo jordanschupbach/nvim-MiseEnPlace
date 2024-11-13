@@ -9,17 +9,18 @@ return {
   },
   config = function()
     local ensured_servers = {
+      -- typescript_language_server = {}, -- TODO: find out actual name...
       jdtls = {
         filetyptes = { 'java' },
       },
       pyright = {},
-      -- rust_analyzer = {},
+      rust_analyzer = {},
       r_language_server = {
         cmd = { 'R', '--slave', '-e', "'languageserver::run()'" },
         filetypes = { 'R', 'r', 'rmd', 'Rmd' },
       },
       clangd = {},
-
+      ts_ls = {},
       lua_ls = { settings = { Lua = {
         workspace = {
           checkThirdParty = false,
@@ -54,9 +55,11 @@ return {
         filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
         single_file_support = true,
       },
+      ts_ls = {},
       jdtls = {},
       tsserver = {},
       phpactor = {},
+      typescript_language_server = {},
       -- pyright = {},
       r_language_server = {
         cmd = { 'R', '--slave', '-e', "'languageserver::run()'" },
@@ -88,10 +91,29 @@ return {
         runtime = { version = 'LuaJIT' },
         completion = { callSnippet = "Replace", },
         telemetry = { enable = false, },
-      }}}
+      },
+      neocmake = {
+cmd = { "neocmakelsp", "--stdio" },
+            filetypes = { "cmake" },
+            root_dir = function(fname)
+                return nvim_lsp.util.find_git_ancestor(fname)
+            end,
+            single_file_support = true,-- suggested
+            on_attach = on_attach, -- on_attach is the on_attach function you defined
+            init_options = {
+                format = {
+                    enable = true
+                },
+                lint = {
+                    enable = true
+                },
+                scan_cmake_in_package = true -- default is true
+            }
+
+      },
 
 
-    }
+    }}}
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     capabilities = require('cmp_nvim_lsp').default_capabilities()
     local mason_lspconfig = require 'mason-lspconfig'

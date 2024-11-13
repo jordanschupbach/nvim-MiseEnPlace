@@ -14,3 +14,4 @@ mymap('v', '<C-return>', '<CMD>SlimeSend0<CR>')
 
 -- }}} Mappings
 
+-- vim: set foldmethod=marker

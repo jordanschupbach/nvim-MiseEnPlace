@@ -10,6 +10,7 @@ return {
     'fhill2/telescope-ultisnips.nvim',
     'sopa0/telescope-makefile',
     'nvim-telescope/telescope-project.nvim',
+    'nvim-telescope/telescope-symbols.nvim',
   },
   -- }}} dependencies
 
