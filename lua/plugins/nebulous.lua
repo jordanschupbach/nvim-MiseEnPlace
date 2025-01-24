@@ -1,6 +1,6 @@
 -- https://github.com/Yagua/nebulous.nvim
 
-return {
+require('pckr').add{
   'Yagua/nebulous.nvim',
   config = function()
 

@@ -63,7 +63,7 @@ vim.opt.timeoutlen = 300
 vim.opt.undofile = true
 vim.opt.updatetime = 300
 vim.opt.wildignore = { '*.o', '*~', '*.pyc', '*pycache*' }
-vim.opt.wrap = true
+vim.opt.wrap = false
 -- }}} Opts
 
 -- {{{ Misc

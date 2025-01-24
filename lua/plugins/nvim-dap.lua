@@ -1,8 +1,13 @@
 -- https://github.com/mfussenegger/nvim-dap
 
-return {
-  'mfussenegger/nvim-dap',
-  dependencies = 'mfussenegger/nvim-jdtls',
-  config = function()
-  end,
-}
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+now(function()
+  add({
+    source = 'mfussenegger/nvim-dap',
+  })
+end)
+
+-- require('pckr').add{
+--   'mfussenegger/nvim-dap',
+--   requires = 'mfussenegger/nvim-jdtls',
+-- }

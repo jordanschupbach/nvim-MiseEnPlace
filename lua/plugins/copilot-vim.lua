@@ -1,5 +1,14 @@
 
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
-return {
-  'github/copilot.vim',
-}
+now(
+  function()
+    add({
+      source = "github/copilot.vim",
+    })
+  end
+)
+
+-- require('pckr').add{
+--     { "github/copilot.vim"};
+-- }

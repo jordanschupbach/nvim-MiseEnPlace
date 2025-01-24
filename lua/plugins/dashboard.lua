@@ -1,5 +1,7 @@
 -- https://github.com/nvimdev/dashboard-nvim
 
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
+
 local bannerstring = {
   '          o           o      o                                                  ',
   '        o$"""$$ooo""""" " oo$$$$o                                               ',
@@ -77,46 +79,23 @@ local bannertext = {
   '      $o.    ""*$$$$  .$"                             \'#$u.    .d#             ',
   '       "$e..         .$`                                "*RNeed*"               ',
   'MiseEnPlace',
+  '(Press <Space> to begin)',
   '',
   '',
   '',
   '',
 }
 
-return {
-  'nvimdev/dashboard-nvim',
-  event = 'VimEnter',
-  config = function()
+
+
+
+now(
+  function()
+    add({
+      source = "nvimdev/dashboard-nvim",
+    })
     require('dashboard').setup {
-      -- theme = 'doom',
-      -- config = {
-      --   header = bannertext, --your header
-      --   center = {
-      --     -- {
-      --     --   icon = ' ',
-      --     --   icon_hl = 'Title',
-      --     --   desc = 'Find File           ',
-      --     --   desc_hl = 'String',
-      --     --   key = 'b',
-      --     --   -- keymap = 'SPC f f',
-      --     --   key_hl = 'Number',
-      --     --   key_format = ' %s', -- remove default surrounding `[]`
-      --     --   action = 'lua print(2)',
-      --     -- },
-      --     {
-      --       icon = ' ',
-      --       desc = 'Projects',
-      --       key = 'p',
-      --       -- keymap = 'SPC f d',
-      --       key_format = ' %s', -- remove default surrounding `[]`
-      --       action = 'Telescope project',
-      --     },
-      --   },
-      --   footer = {}, --your footer
-      -- },
-
       theme = 'hyper',
-
       config = {
         header = bannertext, --your header
         shortcut = {
@@ -130,10 +109,132 @@ return {
         -- action can be a functino type, e.g.
         -- action = func(path) vim.cmd('Telescope find_files cwd=' .. path) end
         project = { enable = false, limit = 3, icon = '', label = '', action = 'Telescope project' },
-        mru = { enable = true, limit = 4, icon = ' MRU', label = '', cwd_only = false },
+        mru = { enable = false, limit = 4, icon = ' MRU', label = '', cwd_only = false },
         footer = {}, -- footer
       }
     }
-  end,
-  dependencies = { { 'nvim-tree/nvim-web-devicons' } },
-}
+  end
+)
+
+
+-- require('pckr').add{
+-- 	{'nvimdev/dashboard-nvim'}; 
+--   config = function()
+--     require('dashboard').setup {
+--       theme = 'hyper',
+--       config = {
+--         header = bannertext, --your header
+--         shortcut = {
+--           -- action can be a function type
+--           -- { desc = string, group = 'highlight group', key = 'shortcut key', action = 'action when you press key' },
+--           { desc = 'Projects', group = '@variable', key = 'p', action = 'Telescope project' },
+--           { desc = 'Colorscheme', group = '@variable', key = 'c', action = 'Telescope colorscheme' },
+--         },
+--         packages = { enable = false }, -- show how many plugins neovim loaded
+--         -- limit how many projects list, action when you press key or enter it will run this action.
+--         -- action can be a functino type, e.g.
+--         -- action = func(path) vim.cmd('Telescope find_files cwd=' .. path) end
+--         project = { enable = false, limit = 3, icon = '', label = '', action = 'Telescope project' },
+--         mru = { enable = true, limit = 4, icon = ' MRU', label = '', cwd_only = false },
+--         footer = {}, -- footer
+--       }
+--     }
+--   end,
+--   dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+-- }
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- require('pckr').add{
+-- 	{'nvimdev/dashboard-nvim'}; 
+--   config = function()
+--     require('dashboard').setup {
+--       theme = 'hyper',
+--       config = {
+--         header = bannertext, --your header
+--         shortcut = {
+--           -- action can be a function type
+--           -- { desc = string, group = 'highlight group', key = 'shortcut key', action = 'action when you press key' },
+--           { desc = 'Projects', group = '@variable', key = 'p', action = 'Telescope project' },
+--           { desc = 'Colorscheme', group = '@variable', key = 'c', action = 'Telescope colorscheme' },
+--         },
+--         packages = { enable = false }, -- show how many plugins neovim loaded
+--         -- limit how many projects list, action when you press key or enter it will run this action.
+--         -- action can be a functino type, e.g.
+--         -- action = func(path) vim.cmd('Telescope find_files cwd=' .. path) end
+--         project = { enable = false, limit = 3, icon = '', label = '', action = 'Telescope project' },
+--         mru = { enable = true, limit = 4, icon = ' MRU', label = '', cwd_only = false },
+--         footer = {}, -- footer
+--       }
+--     }
+--   end,
+--   dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+-- }
+
+
+
+
+-- return {
+--   'nvimdev/dashboard-nvim',
+--   event = 'VimEnter',
+--   config = function()
+--     require('dashboard').setup {
+--       -- theme = 'doom',
+--       -- config = {
+--       --   header = bannertext, --your header
+--       --   center = {
+--       --     -- {
+--       --     --   icon = ' ',
+--       --     --   icon_hl = 'Title',
+--       --     --   desc = 'Find File           ',
+--       --     --   desc_hl = 'String',
+--       --     --   key = 'b',
+--       --     --   -- keymap = 'SPC f f',
+--       --     --   key_hl = 'Number',
+--       --     --   key_format = ' %s', -- remove default surrounding `[]`
+--       --     --   action = 'lua print(2)',
+--       --     -- },
+--       --     {
+--       --       icon = ' ',
+--       --       desc = 'Projects',
+--       --       key = 'p',
+--       --       -- keymap = 'SPC f d',
+--       --       key_format = ' %s', -- remove default surrounding `[]`
+--       --       action = 'Telescope project',
+--       --     },
+--       --   },
+--       --   footer = {}, --your footer
+--       -- },
+-- 
+--       theme = 'hyper',
+-- 
+--       config = {
+--         header = bannertext, --your header
+--         shortcut = {
+--           -- action can be a function type
+--           -- { desc = string, group = 'highlight group', key = 'shortcut key', action = 'action when you press key' },
+--           { desc = 'Projects', group = '@variable', key = 'p', action = 'Telescope project' },
+--           { desc = 'Colorscheme', group = '@variable', key = 'c', action = 'Telescope colorscheme' },
+--         },
+--         packages = { enable = false }, -- show how many plugins neovim loaded
+--         -- limit how many projects list, action when you press key or enter it will run this action.
+--         -- action can be a functino type, e.g.
+--         -- action = func(path) vim.cmd('Telescope find_files cwd=' .. path) end
+--         project = { enable = false, limit = 3, icon = '', label = '', action = 'Telescope project' },
+--         mru = { enable = true, limit = 4, icon = ' MRU', label = '', cwd_only = false },
+--         footer = {}, -- footer
+--       }
+--     }
+--   end,
+--   requires = { { 'nvim-tree/nvim-web-devicons' } },
+-- }
